@@ -1,0 +1,52 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+
+<body>
+
+    <div class="table-data">
+<div class="container-fluid">
+
+
+<div class="text-center">
+    <h2>Practica 3</h2>
+</div >
+
+    <table border="1" class="table table-dark table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Nombre Cmpleto</th>
+            <th>Correo Electronico</th>
+            <th>Ciudad</th>
+            <th>Pais</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.fullName %></td>
+            <td><%=data.emailAddress %></td>
+            <td><%=data.city %></td>
+            <td><%=data.country %></td>
+            
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</div>
+</body>
+
+
+</html>
